@@ -1,16 +1,24 @@
-# nba
+# NBA | API
+ste proyecto de Flutter se enfoca en consumir la API pública de la NBA para obtener información sobre equipos, jugadores y juegos. Se han implementado tres endpoints: `teams`, `players` y `games`. Para cada uno de estos endpoints, se ha creado una pestaña en una barra de navegación inferior para facilitar la navegación.
+## Capturas de pantalla
+| Teams | Games | Players |
+| :---: | :---: |:---: |
+|![Captura de pantalla 1](assets/view_teams.png)|![Captura de pantalla 1](assets/view_games.png)|![Captura de pantalla 1](assets/view_players.png)|
+## Estrucutra del proyecto
+El proyecto se estructura de la siguiente manera:
+- `assets`: contiene los recursos estáticos de la aplicación.
+- `lib`: contiene el código fuente de la aplicación.
+  - `main.dart`: contiene el punto de entrada de la aplicación.
+  - `src`: contiene el código fuente de la aplicación.
+    - `app.dart`: contiene la aplicación.
+    - `api`: contiene la funcion para obtener los datos de la API.
+    - `pages`: contiene las páginas de la aplicación.
+    - `widgets`: contiene los widgets que se utilizan en las páginas de la aplicación.
+## Librerías Utilizadas
 
-A new Flutter project.
+- **http**: Para realizar solicitudes HTTP a la API de la NBA. [Documentación](https://pub.dev/packages/http)
 
-## Getting Started
+- **flutter_svg**: Para trabajar con gráficos SVG. [Documentación](https://pub.dev/packages/flutter_svg)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Recursos
+- **API**: [Documentación de la API](https://www.balldontlie.io/home.html#introduction)
