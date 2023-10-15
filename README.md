@@ -4,6 +4,7 @@ Proyecto flutter enfocado en consumir la API pública basada en la NBA para obte
 | Teams | Games | Players |
 | :---: | :---: |:---: |
 |![Captura de pantalla 1](assets/view_teams.png)|![Captura de pantalla 1](assets/view_games.png)|![Captura de pantalla 1](assets/view_players.png)|
+
 ## Estrucutra del proyecto
 El proyecto se estructura de la siguiente manera:
 - **`assets`**: Almacena los recursos estáticos esenciales de la aplicación

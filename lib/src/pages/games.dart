@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nba/src/api/fetch.dart';
 import 'package:nba/src/widgets/item.dart';
+import 'package:nba/src/widgets/load.dart';
 
 class Games extends StatefulWidget {
   const Games({super.key});
@@ -26,28 +27,30 @@ class _GamesState extends State<Games> {
   }
 
   Map<String, dynamic> config = {
-    "img": "assets/game.svg", 
+    "img": "assets/game.svg",
     "png": false,
-    "color":Colors.red
+    "color": Colors.red
   };
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.grey[50],
-      child: ListView.builder(
-        itemCount: data.length,
-        itemBuilder: (BuildContext context, int index) {
-          return Item([
-            {
-              "match": "${data[index]["home_team"]["name"].toString().toUpperCase()} vs ${data[index]["visitor_team"]["name"].toString().toUpperCase()}",
-              "season":data[index]["season"],
-              "status":data[index]["status"],
-              "score":"${data[index]["home_team_score"]} | ${data[index]["visitor_team_score"]}",
-            },
-            const ["right", "left", "left", "left"]
-          ], data[index], config);
-        },
-      ),
+      child: data.isEmpty
+          ? const Load()
+          : ListView.builder(
+              itemCount: data.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Item([
+                  {
+                    "match":
+                        "${data[index]["home_team"]["name"].toString().toUpperCase()} vs ${data[index]["visitor_team"]["name"].toString().toUpperCase()}",
+                    "season": data[index]["season"],
+                    "status": data[index]["status"],
+                  },
+                  const ["right", "left", "left", "left"]
+                ], {...data[index],"date":data[index]["date"].toString().split("T")[0]}, config);
+              },
+            ),
     );
   }
 }

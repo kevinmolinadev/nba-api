@@ -31,7 +31,7 @@ class _AppState extends State<App> {
         backgroundColor: const Color.fromARGB(255, 51, 138, 209),
         title: Align(
           alignment: Alignment.center,
-          child: Container(
+          child: SizedBox(
             height: 42,
             child: SvgPicture.asset(
               "assets/nba.svg",
